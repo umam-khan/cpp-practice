@@ -1,0 +1,55 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+void print(int arr[],int n)
+{
+    int b=0;
+for(int k=1;k<=n;k++)
+            {
+                for(int m=1;m<=n-k;m++)
+                {
+                    cout<<" ";
+                }
+                for(int p=0;p<k;p++)
+                {
+                    cout<<arr[b]<<" ";
+                    b++;
+                }
+            cout<<endl;
+            }
+}
+int main()
+{
+    int sum=0,i,j,no=0,n,flag,count,a=0;
+    cout<<"enter no of lines:"<<endl;
+    cin>>n;
+    //to get no of prime no to find
+    for(i=1;i<=n;i++)
+    {
+        no=no+i;
+        cout<<"for "<<i<<" we have : "<<no<<endl;
+    }
+    int arr[no];
+    //to find first N prime no 
+    for(i=2,count=1;count<=no;i++)
+    {
+        flag=0;
+        for(int j=2;j<i/2;j++)
+        {
+            if(i%j==0)
+            {
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+        {
+            arr[a]=i;
+            a++;
+            count++;
+        }
+    }
+    //printing pattern of triangle
+    print(arr,n);
+    return 0;
+}

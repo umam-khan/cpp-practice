@@ -1,0 +1,31 @@
+
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    int no=0,n,num,d,i=0,count=0,dig;
+    cout<<"enter a decimal natural no :"<<endl;
+    cin>>n;
+    num=n;
+    while(n>0)
+    {
+        d=n%2;
+        no=no+(d*(pow(10,i)));
+        n=n/2;
+        i++;
+    }
+    cout<<"the binary eqv is "<<no<<endl;
+    while(no>0)
+    {
+        dig=no%10;
+        if(dig==0)
+        {
+        count++;
+        }
+        no=no/10;
+    }
+    cout<<"no of zeroes in binary "<<count;
+    return 0;
+}

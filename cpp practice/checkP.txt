@@ -1,0 +1,42 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int sum=0,i,j,no=0,n,flag=0,fla=0,count,a=0;
+    cout<<"enter a +ve no :"<<endl;
+    cin>>n;
+    //to get no of prime no to find
+    for(i=2;i<=n;i++)
+    {
+        for(int m=2;m<i;m++)
+        {
+            if(i%m==0)
+            {
+                flag=1;
+                break;
+            }
+        }
+        for(j=2;j<=n;j++)
+        {
+        for(int m=2;m<j;m++)
+        {
+            if(j%m==0)
+            {
+                fla=1;
+                break;
+            }
+        }
+        if((flag==0)&&(fla==0))
+        {
+            if(n==(i+j))
+            {
+                cout<<n<<" = "<<i<<" + "<<j<<endl;
+            }
+        }
+        fla=0;
+        }
+        flag=0;
+    }
+    return 0;
+}
